@@ -1,0 +1,14 @@
+#Cannot execute request on any known server 报错这个,是因为服务注册端其实自己也是一个客户端,客户端就要找到服务端注册,然后就自己注册到自己,启动后也会报错是正常的,因为自己还没有自来就开始注册上来.
+eureka:
+  client:
+    service-url:
+      defaultZone : http://localhost:8761/eureka/,http://localhost:8761/eureka/
+    register-with-eureka: false  #自己注册到自己注册列表不展示出来
+#  server:
+    enable-self-preservation: false  #关闭自我保护模式,开发推荐关闭自我保护,生产不要关闭
+# 自己注册到自己的服务名称
+spring:
+  application:
+    name: eureka
+server:
+  port: 8761
