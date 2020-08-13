@@ -2,13 +2,16 @@
 eureka:
   client:
     service-url:
-      defaultZone : http://localhost:8761/eureka/,http://localhost:8761/eureka/
-    register-with-eureka: false  #自己注册到自己注册列表不展示出来
-#  server:
+      defaultZone : http://127.0.0.1:8761/eureka/
+#      ,http://localhost:8761/eureka/
+    register-with-eureka: false  #自己注册到自己注册列表是否展示出来
+    #  server:
     enable-self-preservation: false  #关闭自我保护模式,开发推荐关闭自我保护,生产不要关闭
+    # 不需要检索服务
+    fetch-registry: false
 # 自己注册到自己的服务名称
 spring:
   application:
     name: eureka
-server:
-  port: 8761
+#server:
+#  port: 8761
